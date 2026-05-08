@@ -15,8 +15,8 @@ function toLocalDateString(date: Date): string {
 function formatTodayDate(date: Date): string {
   const weekdays = ['日', '月', '火', '水', '木', '金', '土']
   const y = date.getFullYear()
-  const m = date.getMonth() + 1
-  const d = date.getDate()
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  const d = String(date.getDate()).padStart(2, '0')
   const w = weekdays[date.getDay()]
   return `${y}年${m}月${d}日（${w}）`
 }
